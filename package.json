@@ -1,0 +1,16 @@
+{
+  "name": "fake-raycast-backend",
+  "private": true,
+  "scripts": {
+    "build": "nitro build",
+    "dev": "nitro dev --host",
+    "prepare": "nitro prepare",
+    "preview": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "openai": "^4.37.1"
+  },
+  "devDependencies": {
+    "nitropack": "^2.9.6"
+  }
+}
