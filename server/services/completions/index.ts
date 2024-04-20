@@ -4,10 +4,10 @@ import { type H3Event, EventHandlerRequest } from "h3"
 import { config } from "~/config"
 
 export async function OpenAIChatCompletion(
-  event: H3Event<EventHandlerRequest>,
-  body: RaycastCompletions
+  event: H3Event<EventHandlerRequest>
 ) {
   const openai_message = []
+  const body: RaycastCompletions = await readBody(event)
   const messages = body.messages
   let temperature = config.temperature
   for (const message of messages) {

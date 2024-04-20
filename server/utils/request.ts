@@ -12,7 +12,7 @@ export const httpClient = $fetch.create<any>({
 export async function getBackendResponse(
   url: string,
   headers = {},
-  method?:
+  method:
     | "DELETE"
     | "GET"
     | "TRACE"
@@ -21,7 +21,7 @@ export async function getBackendResponse(
     | "POST"
     | "PUT"
     | "CONNECT"
-    | "OPTIONS",
+    | "OPTIONS" = "GET",
   data?: any
 ) {
   headers = {
@@ -30,7 +30,7 @@ export async function getBackendResponse(
   }
   return await httpClient(url, {
     headers,
-    method: method || "GET",
-    body: data ? JSON.stringify(data) : undefined
+    method,
+    body: data ?? JSON.stringify(data)
   })
 }
