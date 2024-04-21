@@ -11,6 +11,8 @@
     "openai": "^4.37.1"
   },
   "devDependencies": {
+    "@vercel/kv": "^1.0.1",
+    "@upstash/redis": "^1.28.4",
     "nitropack": "^2.9.6"
   }
 }

@@ -12,9 +12,15 @@ importers:
         specifier: ^4.37.1
         version: 4.37.1
     devDependencies:
+      '@upstash/redis':
+        specifier: ^1.28.4
+        version: 1.30.0
+      '@vercel/kv':
+        specifier: ^1.0.1
+        version: 1.0.1
       nitropack:
         specifier: ^2.9.6
-        version: 2.9.6
+        version: 2.9.6(@upstash/redis@1.30.0)(@vercel/kv@1.0.1)
 
 packages:
 
@@ -495,6 +501,16 @@ packages:
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
 
+  '@upstash/redis@1.25.1':
+    resolution: {integrity: sha512-ACj0GhJ4qrQyBshwFgPod6XufVEfKX2wcaihsEvSdLYnY+m+pa13kGt1RXm/yTHKf4TQi/Dy2A8z/y6WUEOmlg==}
+
+  '@upstash/redis@1.30.0':
+    resolution: {integrity: sha512-bkxl2n7qls27hONXNyItM6ccRT0NBJ8c6zl83wx+TlODpYXehgeiUJTkcTaXLp7hk+zy6Mqpzpeo3GX+wZSvBw==}
+
+  '@vercel/kv@1.0.1':
+    resolution: {integrity: sha512-uTKddsqVYS2GRAM/QMNNXCTuw9N742mLoGRXoNDcyECaxEXvIHG0dEY+ZnYISV4Vz534VwJO+64fd9XeSggSKw==}
+    engines: {node: '>=14.6'}
+
   '@vercel/nft@0.26.4':
     resolution: {integrity: sha512-j4jCOOXke2t8cHZCIxu1dzKLHLcFmYzC3yqAK6MfZznOL1QIJKd0xcFsXK3zcqzU7ScsE2zWkiMMNHGMHgp+FA==}
     engines: {node: '>=16'}
@@ -717,6 +733,9 @@ packages:
     peerDependenciesMeta:
       uWebSockets.js:
         optional: true
+
+  crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
 
   db0@0.1.4:
     resolution: {integrity: sha512-Ft6eCwONYxlwLjBXSJxw0t0RYtA5gW9mq8JfBXn9TtC0nDPlqePAhpv9v4g9aONBi6JI1OXHTKKkUYGd+BOrCA==}
@@ -2125,6 +2144,18 @@ snapshots:
 
   '@types/resolve@1.20.2': {}
 
+  '@upstash/redis@1.25.1':
+    dependencies:
+      crypto-js: 4.2.0
+
+  '@upstash/redis@1.30.0':
+    dependencies:
+      crypto-js: 4.2.0
+
+  '@vercel/kv@1.0.1':
+    dependencies:
+      '@upstash/redis': 1.25.1
+
   '@vercel/nft@0.26.4':
     dependencies:
       '@mapbox/node-pre-gyp': 1.0.11
@@ -2357,6 +2388,8 @@ snapshots:
       which: 2.0.2
 
   crossws@0.2.4: {}
+
+  crypto-js@4.2.0: {}
 
   db0@0.1.4: {}
 
@@ -2868,7 +2901,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  nitropack@2.9.6:
+  nitropack@2.9.6(@upstash/redis@1.30.0)(@vercel/kv@1.0.1):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.1
       '@netlify/functions': 2.6.0
@@ -2935,7 +2968,7 @@ snapshots:
       unctx: 2.3.1
       unenv: 1.9.0
       unimport: 3.7.1(rollup@4.14.3)
-      unstorage: 1.10.2(ioredis@5.4.1)
+      unstorage: 1.10.2(@upstash/redis@1.30.0)(@vercel/kv@1.0.1)(ioredis@5.4.1)
       unwasm: 0.3.9
     transitivePeerDependencies:
       - '@azure/app-configuration'
@@ -3402,7 +3435,7 @@ snapshots:
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.6.1
 
-  unstorage@1.10.2(ioredis@5.4.1):
+  unstorage@1.10.2(@upstash/redis@1.30.0)(@vercel/kv@1.0.1)(ioredis@5.4.1):
     dependencies:
       anymatch: 3.1.3
       chokidar: 3.6.0
@@ -3415,6 +3448,8 @@ snapshots:
       ofetch: 1.3.4
       ufo: 1.5.3
     optionalDependencies:
+      '@upstash/redis': 1.30.0
+      '@vercel/kv': 1.0.1
       ioredis: 5.4.1
     transitivePeerDependencies:
       - uWebSockets.js
