@@ -1,14 +1,10 @@
-import { User } from "~/types"
-
 export default defineEventHandler(async event => {
   const { req } = event.node
-  const backendResponse = await getBackendResponse(
-    "/me",
-    req.headers,
-    "GET"
-  ).then(response => {
+  const backendResponse = await getBackendResponse("/me", req.headers, "GET")
+  if (backendResponse.email === process.env.RAYCAST_EMAIL) {
+    console.info(`<${backendResponse.email}> is logged in.`)
     return {
-      ...response,
+      ...backendResponse,
       has_active_subscription: true,
       has_pro_features: true,
       has_better_ai: true,
@@ -22,18 +18,5 @@ export default defineEventHandler(async event => {
       can_upgrade_to_pro: false,
       admin: true
     }
-  })
-  const store = getStore<User[]>("users") || []
-  const user = store.find(u => u.email === backendResponse.email) || null
-  if (user?.token !== req.headers.authorization) {
-    console.info(`<${backendResponse.email}> is logged in.`)
-    setStore("users", [
-      ...getStore<User[]>("users"),
-      {
-        email: backendResponse.email,
-        token: req.headers.authorization
-      }
-    ])
-  }
-  return backendResponse
+  } else return backendResponse
 })
