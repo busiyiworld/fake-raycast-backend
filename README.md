@@ -1,5 +1,5 @@
 # Fake Raycast Backend
-![Raycast AI](./assets/raycasst.png)
+![Raycast Sync](./assets/raycast.png)
 
 This is a fake Raycast backend that can be deployed to Vercel in just one step.
 
