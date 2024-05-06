@@ -19,7 +19,11 @@ For example, you can use the following Surge rule:
 https:\/\/backend.raycast.com https://fake-raycast-backend-xxxx.vercel.app header
 ```
 
-If you want to use Raycat CloudSync, simply create a free (**maybe**) Vercel KV database and set the `KV_NAME` environment variable to the name of the KV database.
+
+> [!WARNING]
+> Not recommended. **It's very easy to bump into the paywall**
+
+If you want to use Raycat CloudSync, simply create a Vercel KV database and set the `KV_NAME` environment variable to the name of the KV database.
 
 ## Credits
 - [Raycast Unblock](https://github.com/wibus-wee/raycast-unblock): Based on this project, I simplified some features and made it easier to deploy to Vercel.
