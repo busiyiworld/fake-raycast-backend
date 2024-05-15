@@ -26,7 +26,6 @@ export default defineEventHandler(() => {
       Object.assign(default_models, config.defaultRaycastModel)
     }
   }
-  console.log(models)
   return {
     default_models,
     models
