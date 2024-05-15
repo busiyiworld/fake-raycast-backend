@@ -1,4 +1,4 @@
-import { Config } from "./types/config"
+import { Config } from "./types"
 
 export const config: Config = {
   defaultRaycastModel: "openai-gpt-3.5-turbo",

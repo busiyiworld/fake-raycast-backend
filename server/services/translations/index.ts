@@ -1,4 +1,4 @@
-import type { TranslateFrom, TranslateTo } from "~/types/raycast/translate"
+import type { TranslateFrom, TranslateTo } from "~/types"
 import { generateTranslationsPrompts } from "./prompts"
 import OpenAI from "openai"
 import type { AIGenerateContent } from "~/types/internal/ai-generate-content"

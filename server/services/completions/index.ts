@@ -1,5 +1,5 @@
 import OpenAI from "openai"
-import type { RaycastCompletions } from "~/types/raycast/completions"
+import type { RaycastCompletions } from "~/types"
 import { type H3Event, EventHandlerRequest } from "h3"
 import { config } from "~/config"
 
