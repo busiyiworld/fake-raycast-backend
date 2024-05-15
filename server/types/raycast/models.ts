@@ -16,5 +16,11 @@ export interface RaycastModel {
   }
   suggestions: string[]
   in_better_ai_subscription: boolean
-  status: unknown
+  status?: any
+  availability?: "public" | "deprecated"
+  abilities?: {
+    [key: string]: {
+      toggleable: boolean
+    }
+  }
 }

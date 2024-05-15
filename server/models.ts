@@ -1,4 +1,4 @@
-import type { RaycastModel } from "~/types/raycast/models"
+import type { RaycastModel } from "~/types"
 
 export const models = [
   {
@@ -6,17 +6,20 @@ export const models = [
     description: "GPT-3.5 Turbo models are capable and cost-effective.\n",
     model: "gpt-3.5-turbo",
     name: "GPT-3.5 Turbo",
-    features: ["chat", "quick_ai", "commands", "api", "emoji_search"],
     speed: 4,
     intelligence: 3,
+    context: 16,
+
     provider: "openai",
     provider_name: "OpenAI",
     provider_brand: "openai",
     requires_better_ai: false,
-    context: 16,
     capabilities: {},
+    abilities: {},
+    features: ["chat", "quick_ai", "commands", "api", "emoji_search"],
     suggestions: ["chat", "quick_ai", "commands"],
     in_better_ai_subscription: false,
+    availability: "public",
     status: null
   },
   {
@@ -28,12 +31,15 @@ export const models = [
     features: ["chat", "quick_ai", "commands", "api", "emoji_search"],
     speed: 2,
     intelligence: 5,
+    context: 128,
+
     provider: "openai",
     provider_name: "OpenAI",
     provider_brand: "openai",
     requires_better_ai: false,
-    context: 128,
     capabilities: {},
+    abilities: {},
+    availability: "public",
     suggestions: ["chat", "quick_ai", "commands"],
     in_better_ai_subscription: false,
     status: null
