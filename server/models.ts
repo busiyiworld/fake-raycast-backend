@@ -64,6 +64,26 @@ export const models = [
     suggestions: ["chat", "quick_ai", "commands"],
     in_better_ai_subscription: false,
     status: null
+  },
+  {
+    id: "openai-gpt-4o-mini",
+    description: "More than 60% cheaper than GPT-3.5 Turbo. \n",
+    model: "gpt-4o-mini",
+    name: "GPT-4o mini",
+    features: ["chat", "quick_ai", "commands", "api", "emoji_search"],
+    speed: 4,
+    intelligence: 4,
+    context: 128,
+    provider: "openai",
+    provider_name: "OpenAI",
+    provider_brand: "openai",
+    requires_better_ai: false,
+    capabilities: {},
+    abilities: {},
+    availability: "public",
+    suggestions: ["chat", "quick_ai", "commands"],
+    in_better_ai_subscription: false,
+    status: null
   }
 ] as const satisfies RaycastModel[]
 
